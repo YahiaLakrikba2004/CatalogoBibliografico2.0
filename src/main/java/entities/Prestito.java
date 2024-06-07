@@ -14,7 +14,7 @@ public class Prestito {
     @JoinColumn(name = "utente_id")
     private Utente utente;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "elemento_prestato_id")
     private ElementoL elementoPrestato;
 
@@ -30,14 +30,62 @@ public class Prestito {
     public Prestito() {
     }
 
-    public Prestito(int id, Utente utente, ElementoL elementoPrestato, LocalDate dataInizio, LocalDate dataRestituzionePrevista, LocalDate dataRestituzioneEffettiva) {
-        this.id = id;
+    public Prestito(Utente utente, ElementoL elementoPrestato, LocalDate dataInizio, LocalDate dataRestituzionePrevista, LocalDate dataRestituzioneEffettiva) {
         this.utente = utente;
+        this.elementoPrestato = elementoPrestato;
         this.dataInizio = dataInizio;
         this.dataRestituzionePrevista = dataRestituzionePrevista;
         this.dataRestituzioneEffettiva = dataRestituzioneEffettiva;
     }
 
+    // Getters and Setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Utente getUtente() {
+        return utente;
+    }
+
+    public void setUtente(Utente utente) {
+        this.utente = utente;
+    }
+
+    public ElementoL getElementoPrestato() {
+        return elementoPrestato;
+    }
+
+    public void setElementoPrestato(ElementoL elementoPrestato) {
+        this.elementoPrestato = elementoPrestato;
+    }
+
+    public LocalDate getDataInizio() {
+        return dataInizio;
+    }
+
+    public void setDataInizio(LocalDate dataInizio) {
+        this.dataInizio = dataInizio;
+    }
+
+    public LocalDate getDataRestituzionePrevista() {
+        return dataRestituzionePrevista;
+    }
+
+    public void setDataRestituzionePrevista(LocalDate dataRestituzionePrevista) {
+        this.dataRestituzionePrevista = dataRestituzionePrevista;
+    }
+
+    public LocalDate getDataRestituzioneEffettiva() {
+        return dataRestituzioneEffettiva;
+    }
+
+    public void setDataRestituzioneEffettiva(LocalDate dataRestituzioneEffettiva) {
+        this.dataRestituzioneEffettiva = dataRestituzioneEffettiva;
+    }
 
     @Override
     public String toString() {
@@ -50,5 +98,4 @@ public class Prestito {
                 ", dataRestituzioneEffettiva=" + dataRestituzioneEffettiva +
                 '}';
     }
-
 }

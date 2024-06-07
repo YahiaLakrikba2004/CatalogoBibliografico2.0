@@ -5,11 +5,11 @@ import jakarta.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name = "tipo_elemento_letterario")
-@NamedQuery(name = "trovaPerIsbn", query = "SELECT e FROM ElementoLetteraio e WHERE e.codiceIsbn = :codiceIsbn")
-@NamedQuery(name = "trovaPerAnnoPubblicazione", query = "SELECT e FROM ElementoLetterario e WHERE e.annoDiPubblicazione = :annoDiPubblicazione")
-@NamedQuery(name = "trovaPerAutore", query = "SELECT 1 FROM Libro 1 WHERE 1.autore = :autore")
-@NamedQuery(name = "trovaPerTitoloOParte", query = "SELECT e FROM ElementoLetterario e WHERE e.titolo LIKE CONCAT('%', :titolo, '%')")
+@DiscriminatorColumn(name = "tipo_elemento_l")
+@NamedQuery(name = "trovaPerIsbn", query = "SELECT e FROM ElementoL e WHERE e.codiceIsbn = :codiceIsbn")
+@NamedQuery(name = "trovaPerAnnoPubblicazione", query = "SELECT e FROM ElementoL e WHERE e.annoDiPubblicazione = :annoDiPubblicazione")
+@NamedQuery(name = "trovaPerAutore", query = "SELECT l FROM Libro l WHERE l.autore = :autore")
+@NamedQuery(name = "trovaPerTitoloOParte", query = "SELECT e FROM ElementoL e WHERE e.titolo LIKE CONCAT('%', :titolo, '%')")
 
 public class ElementoL {
     @Id
