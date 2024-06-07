@@ -4,7 +4,7 @@ package entities;
 import jakarta.persistence.Entity;
 
 @Entity
-public class Libro extends ElementoLetterario {
+public class Libro extends ElementoL {
     private String autore;
     private String genere;
 

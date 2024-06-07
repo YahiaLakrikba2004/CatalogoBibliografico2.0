@@ -11,7 +11,7 @@ import jakarta.persistence.*;
 @NamedQuery(name = "trovaPerAutore", query = "SELECT 1 FROM Libro 1 WHERE 1.autore = :autore")
 @NamedQuery(name = "trovaPerTitoloOParte", query = "SELECT e FROM ElementoLetterario e WHERE e.titolo LIKE CONCAT('%', :titolo, '%')")
 
-public class ElementoLetterario {
+public class ElementoL {
     @Id
     private int codiceIsbn;
     private String titolo;
@@ -23,7 +23,7 @@ public class ElementoLetterario {
 
 
 
-    public ElementoLetterario(int codiceIsbn, String titolo, int annoDiPubblicazione, int numeroDiPagine) {
+    public ElementoL(int codiceIsbn, String titolo, int annoDiPubblicazione, int numeroDiPagine) {
         this.codiceIsbn = codiceIsbn;
         this.titolo = titolo;
         this.annoDiPubblicazione = annoDiPubblicazione;
